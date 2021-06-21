@@ -11,17 +11,17 @@
     <div class="row">
         <div class="col-12"><form action="customer " method="POST" >
         <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Name of Customer:</label>
             <input type="text" name="name" value="{{old('name')}}" class="form-control">
-   
+
             {{$errors->first('name')}}<br>
- 
+
             @csrf
-           
+
         </div>
         <div class="form-group">
         <label for="email">Email</label>
-            <input type="text" name="email" value="{{old('email')}}" class="form-control"> 
+            <input type="text" name="email" value="{{old('email')}}" class="form-control">
             {{$errors->first('email')}}<br>
             @csrf
         </div>
@@ -32,7 +32,7 @@
           <option value="1">Active</option>
           <option value="0">Inactive</option>
           @csrf
- 
+
 
         </select>
         </div>
@@ -51,7 +51,7 @@
     @endforeach
 
     </ul>
-    
+
     </div>
     @csrf
     <div class="col-6"> <ul>
@@ -61,9 +61,9 @@
     @endforeach
     @csrf
     </ul>
-    
+
     </div>
     @csrf
-  
+
 @endsection
    </div>
