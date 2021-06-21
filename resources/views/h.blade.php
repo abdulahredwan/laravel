@@ -6,7 +6,7 @@
 
 <figure class="text-center">
   <blockquote class="blockquote">
-    <p>Welcom to my first laravel project.</p>
+    <p>Welcom to my first laravel project. I am pirate </p>
   </blockquote>
   <figcaption class="blockquote-footer">
     is there any problems contact me  <cite title="Source Title">in contact </cite>
