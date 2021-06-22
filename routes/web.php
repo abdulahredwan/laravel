@@ -17,7 +17,7 @@ Route::view ('/', 'h');
 
 
 Route::view ('about', 'about');
-Route::view ('contacts', 'contact');
+Route::view ('contact', 'contact');
 Route::view ('az' , 'az');
 
 Route::get('customer','\App\Http\Controllers\CustomersController@list'  );

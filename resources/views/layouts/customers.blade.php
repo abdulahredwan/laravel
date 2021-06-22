@@ -22,7 +22,7 @@
         <div class="form-group">
         <label for="email">Email</label>
             <input type="text" name="email" value="{{old('email')}}" class="form-control">
-            {{$errors->first('email')}}<br>
+            {{$errors->first('random')}}<br>
             @csrf
         </div>
         <div class="form-group">
