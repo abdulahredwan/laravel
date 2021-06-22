@@ -48,7 +48,7 @@
        <h3>Active Customer</h3>
        <ul> @csrf
     @foreach ($activeCustomer as $activeCustomer)
-    <span style="color: greenyellow; font-size: larger;></span><li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->email}})</span></li>
+               <li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->email}})</span></li>
     @endforeach
 
     </ul>
