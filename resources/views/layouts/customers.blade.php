@@ -14,7 +14,7 @@
         <label for="name">Name of Customer:</label>
             <input type="text" name="name" value="{{old('name')}}" class="form-control">
 
-            {{$errors->first('name')}}<br>
+            <span style="color: darkred "> <strong>{{$errors->first('name')}}<br></span> </strong>
 
             @csrf
 
@@ -22,9 +22,10 @@
         <div class="form-group">
         <label for="email">Email</label>
             <input type="text" name="email" value="{{old('email')}}" class="form-control">
-            {{$errors->first('random')}}<br>
+            <strong><span style="color: red">{{$errors->first('email')}}<br></span></strong>
             @csrf
         </div>
+
         <div class="form-group">
         <label for="active">Status</label>
         <select name="active" id="active" class="form-control">
@@ -47,7 +48,7 @@
        <h3>Active Customer</h3>
        <ul> @csrf
     @foreach ($activeCustomer as $activeCustomer)
-    <li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->email}})</span></li>
+    <span style="color: greenyellow; font-size: larger;></span><li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->email}})</span></li>
     @endforeach
 
     </ul>
