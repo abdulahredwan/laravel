@@ -8,17 +8,21 @@ use Illuminate\Http\RedirectResponse;
 
 class CustomersController extends Controller
 {
- Public function list()
+ Public function index()
 {
 
     $activeCustomers =Customer::active()->get();
     $inactiveCustomers =Customer::inactive()->get();
+
+
+
+
+
+  return view('customers.index', compact('activeCustomers', 'inactiveCustomers'));
+}
+public function create(){
     $companies = Company::all();
-
-
-
-
-  return view('layouts.customers', compact('activeCustomers', 'inactiveCustomers', 'companies'));
+  return view('customers.create' , compact('companies'));
 }
 
 public  function store()
@@ -36,6 +40,6 @@ public  function store()
 
 
 
-    return back();
+   return redirect('customer');
 }
 }
