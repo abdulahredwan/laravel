@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Customer;
 use Illuminate\Http\RedirectResponse;
 
@@ -12,15 +13,14 @@ class CustomersController extends Controller
 
     $activeCustomers =Customer::active()->get();
     $inactiveCustomers =Customer::inactive()->get();
+    $companies = Company::all();
 
 
 
 
-  return view('layouts.customers', [
-      'activeCustomer'=>$activeCustomers,
-      'inactiveCustomer'=>$inactiveCustomers,
-  ]);
+  return view('layouts.customers', compact('activeCustomers', 'inactiveCustomers', 'companies'));
 }
+
 public  function store()
 {
     $data = request()->validate([
