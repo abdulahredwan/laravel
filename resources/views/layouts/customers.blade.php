@@ -39,7 +39,7 @@
         </div>
 
         <div class="form-group">
-        <label for="company_id">Company</label>
+        <label for="company_id">Select Company</label>
         <select name="company_id" id="company_id" class="form-control">
            @foreach($companies as $company)
                <option value="{{$company->id}}">{{$company->name}}</option>
@@ -60,7 +60,7 @@
        <h3>Active Customer</h3>
        <ul> @csrf
     @foreach ($activeCustomers as $activeCustomer)
-               <li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->email}})</span></li>
+               <li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->company->name}})</span></li>
     @endforeach
 
     </ul>
@@ -70,12 +70,25 @@
     <div class="col-6"> <ul>
     <h3>Inactive Customer</h3>
     @foreach ($inactiveCustomers as $inactiveCustomer)
-    <li>{{$inactiveCustomer->name}}<span class="text-muted">({{$inactiveCustomer->email}})</span></li>
+    <li>{{$inactiveCustomer->name}}<span class="text-muted">({{$inactiveCustomer->company->name}})</span></li>
     @endforeach
     @csrf
     </ul>
 
     </div>
+       <div class="row">
+
+           <div class="col-16">
+               @foreach($companies as $company)
+                   <h3> Custoemors of {{$company->name}}</h3>
+                  <ul>
+                      @foreach($company->customers as $customer)
+                          <li>{{$customer->name}}</li>
+                      @endforeach
+                  </ul>
+               @endforeach
+           </div>
+       </div>
     @csrf
 
 @endsection

@@ -27,6 +27,7 @@ public  function store()
         'name'=> 'required|min:3',
         'email'=> 'required|email',
         'active'=> 'required',
+        'company_id'=> 'required',
 //        'random'=> '',
 
     ]);
