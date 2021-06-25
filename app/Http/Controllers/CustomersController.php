@@ -10,9 +10,9 @@ class CustomersController extends Controller
 {
  Public function index()
 {
+    $customers =Customer::all();
 
-    $activeCustomers =Customer::active()->get();
-    $inactiveCustomers =Customer::inactive()->get();
+   return view('customers.index', compact('customers'));
 
 
 

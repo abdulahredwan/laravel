@@ -11,34 +11,15 @@
 </div>
 
     <hr>
-   <div class="row">
-       <div class="col-6"> <ul>
-       <h3>Active Customer</h3>
-       <ul> @csrf
-    @foreach ($activeCustomers as $activeCustomer)
-               <li>{{$activeCustomer->name}}<span class="text-muted">({{$activeCustomer->company->name}})</span></li>
-    @endforeach
 
-    </ul>
-
-    </div>
-    @csrf
-    <div class="col-6"> <ul>
-    <h3>Inactive Customer</h3>
-    @foreach ($inactiveCustomers as $inactiveCustomer)
-    <li>{{$inactiveCustomer->name}}<span class="text-muted">({{$inactiveCustomer->company->name}})</span></li>
-    @endforeach
-    @csrf
-    </ul>
-
-    </div>
-       <div class="row">
-
-           <div class="col-16">
-
-           </div>
-       </div>
-    @csrf
-
+  @foreach($customers  as $customer)
+      <div class="row">
+          <div class="col-2">
+              {{$customer->id}}
+          </div>
+          <div class="col-4">{{$customer->name}}</div>
+          <div class="col-4">{{$customer->company->name}}</div>
+          <strong> <div class="col-2">{{$customer->active ?   'Active' : 'Inactive' }}</div></strong>
+      </div>
+  @endforeach
 @endsection
-   </div>
