@@ -8,38 +8,42 @@ use Illuminate\Http\RedirectResponse;
 
 class CustomersController extends Controller
 {
- Public function index()
-{
-    $customers =Customer::all();
+    Public function index()
+    {
+        $customers =Customer::all();
 
-   return view('customers.index', compact('customers'));
-
-
+        return view('customers.index', compact('customers'));
 
 
 
-  return view('customers.index', compact('activeCustomers', 'inactiveCustomers'));
-}
-public function create(){
-    $companies = Company::all();
-  return view('customers.create' , compact('companies'));
-}
 
-public  function store()
-{
-    $data = request()->validate([
-        'name'=> 'required|min:3',
-        'email'=> 'required|email',
-        'active'=> 'required',
-        'company_id'=> 'required',
+
+
+    }
+    public function create(){
+        $companies = Company::all();
+        return view('customers.create' , compact('companies'));
+    }
+
+    public  function store()
+    {
+        $data = request()->validate([
+            'name'=> 'required|min:3',
+            'email'=> 'required|email',
+            'active'=> 'required',
+            'company_id'=> 'required',
 //        'random'=> '',
 
-    ]);
+        ]);
 
-   Customer::create($data);
+        Customer::create($data);
 
 
 
-   return redirect('customer');
-}
+        return redirect('customer');
+    }
+    public function show(Customer $customer)
+    {
+      return view('customers.show', compact('customer'));
+    }
 }

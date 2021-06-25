@@ -17,9 +17,11 @@ Route::view ('/', 'h');
 
 
 Route::view ('about', 'az');
-Route::view ('contact', 'contact');
+Route::view ('contact',
+    'contact');
 Route::view ('az' , 'az');
 
 Route::get('customer','\App\Http\Controllers\CustomersController@index'  );
 Route::get('customers/create','\App\Http\Controllers\CustomersController@create'  );
 Route::post('customer', '\App\Http\Controllers\CustomersController@store');
+Route::get('customer/{customer}', '\App\Http\Controllers\CustomersController@show');
