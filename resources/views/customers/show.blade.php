@@ -7,7 +7,9 @@
 @section('content')
     <div class="row">
         <div class="col-12"><h1>Add customers</h1></div>
-
+     <p></p><br>
+{{--        <br> <button type="button" class="btn btn-primary"></button>--}}
+        <button type="button" class="btn btn-outline-primary"><a href="/customer/{{$customer->id}}/edit">Edit</a></button>
     </div>
     <div class="row">
         <div class="col-12" style="color: blue" >
@@ -22,4 +24,5 @@
           <p><strong>Company phone :</strong>{{$customer->company->phone}}</p>
       </div>
     </div>
+    <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/customer/">LIST CUSTOMERS</a></button>
 @endsection
