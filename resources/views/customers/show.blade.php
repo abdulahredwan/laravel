@@ -20,6 +20,7 @@
       <div class="col-12">
           <p><strong>NAME:</strong>{{$customer->name}}</p>
           <p> <span style="font-style: initial"><strong>email:</strong></span>{{$customer->email}}</p>
+          <p> <span style="font-style: initial"><strong>Phone:</strong></span>{{$customer->pho}}</p>
           <p><strong>Company:</strong>{{$customer->company->name}}</p>
           <p><strong>Company phone :</strong>{{$customer->company->phone}}</p>
       </div>

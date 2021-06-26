@@ -13,13 +13,19 @@
     <strong><span style="color: red">{{$errors->first('email')}}<br></span></strong>
     @csrf
 </div>
+<div class="form-group">
+    <label for="pho">Phone:</label>
+    <input type="text" name="pho" value="{{old('pho') ?? $customer->pho}}" class="form-control">
+    <strong><span style="color: red">{{$errors->first('pho')}}<br></span></strong>
+    @csrf
+</div>
 
 <div class="form-group">
     <label for="active">Status</label>
     <select name="active" id="active" class="form-control">
         <option value="" disabled>Select Customer Status</option>
-        <option value="1">Active</option>
-        <option value="0">Inactive</option>
+        <option value="1" {{$customer->active == 'Active' ? 'selected' :''}}>Active</option>
+        <option value="0" {{$customer->inactive == 'Inactive' ? 'selected' : ''}}>Inactive</option>
         @csrf
 
 
