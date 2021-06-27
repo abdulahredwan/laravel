@@ -22,7 +22,7 @@
               <a href="/customer/{{$customer->id}}">{{$customer->name}}</a>
           </div>
           <div class="col-4">{{$customer->company->name}}</div>
-          <strong> <div class="col-2">{{$customer->active ?   'Active' : 'Inactive' }}_</div></strong>
+          <strong> <div class="col-2">{{$customer->active ?   'Active' : 'Inactive' }}-<br></div></strong>
           <strong> <div class="row">{{$customer->pho}}</div></strong>
       </div>
   @endforeach

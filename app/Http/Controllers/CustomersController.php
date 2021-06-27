@@ -28,18 +28,9 @@ class CustomersController extends Controller
 
     public  function store()
     {
-        $data = request()->validate([
-            'name'=> 'required|min:3',
-            'email'=> 'required|email',
-            'pho'=> 'required',
-            'active'=> 'required',
-            'company_id'=> 'required',
 
-//        'random'=> '',
 
-        ]);
-
-        Customer::create($data);
+        Customer::create($this->validateRequest());
 
 
 
@@ -56,16 +47,19 @@ class CustomersController extends Controller
     }
     public function update(Customer $customer)
     {
-        $data = request()->validate([
+        $customer->update($this->validateRequest());
+        return redirect('customer/' .$customer->id);
+
+    }
+    private function validateRequest()
+    {
+        return request()->validate([
             'name'=> 'required|min:3',
             'email'=> 'required|email',
-            'pho'=> 'required',
+            'pho'=> 'required|min :10',
 
             'active'=> 'required',
             'company_id'=> 'required',
-          ]);
-        $customer->update($data);
-        return redirect('customer/' .$customer->id);
-
+        ]);
     }
 }
