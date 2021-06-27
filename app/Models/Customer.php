@@ -35,7 +35,7 @@ class Customer extends Model
           1=>'Active',
           0=>'Inactive',
           2=>'Online'
-
+asas
       ];
   }
 }
