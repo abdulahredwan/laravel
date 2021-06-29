@@ -31,6 +31,6 @@
     <form action="/customer/{{$customer->id}}" method="POST">
         @method('DELETE')
         @csrf
-        <button class="btn btn-danger" type="submit">DELETE</button>
+        <button class="btn btn-danger" type="submit">DELETE {{$customer->name}}</button>
     </form>
 @endsection
