@@ -12,7 +12,8 @@ class Customer extends Model
   protected $attributes =[
     'active'=>1
   ];
-  public function getActiveAttribute($attribute)
+
+    public function getActiveAttribute($attribute)
   {
       return $this->activeOptions()[$attribute];
   }

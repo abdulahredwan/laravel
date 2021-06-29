@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12"><h1>Customers Register</h1></div>
-    <p><a href="customers/create">Add new customers</a></p>
+    <p><a href="customer/create">Add new customers</a></p>
 </div>
 
     <hr>
