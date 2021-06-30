@@ -17,8 +17,8 @@ Route::view ('/', 'h');
 
 
 Route::view ('about', 'az');
-Route::view ('contact',
-    'contact');
+Route::get('contact', '\App\Http\Controllers\ContactFormController@create');
+Route::post('contact', '\App\Http\Controllers\ContactFormController@store');
 Route::view ('az' , 'az');
 
 //Route::get('customer','\App\Http\Controllers\CustomersController@index'  );
