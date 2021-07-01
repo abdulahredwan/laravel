@@ -17,8 +17,13 @@
 <div class="container">
 
 @include('nav')
-  
 
+    @if(session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            <strong>Success</strong>{{session()->get('message')}} <a href="https://t.me/abd_red080">Abdulahi redwan</a>
+        </div>
+
+    @endif
      @yield('content')
 </div>
 
