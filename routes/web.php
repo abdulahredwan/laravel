@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view ('/', 'h');
+Route::view ('/', 'home');
 
 
 Route::view ('about', 'az');
@@ -29,4 +29,28 @@ Route::view ('az' , 'az');
 //Route::patch('customer/{customer}', '\App\Http\Controllers\CustomersController@update');
 //Route::delete('customer/{customer}', '\App\Http\Controllers\CustomersController@destroy');
 
-Route::resource('customer', '\App\Http\Controllers\CustomersController');
+Route::resource('customer', '\App\Http\Controllers\CustomersController')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
     <h1>About Page </h1>
@@ -20,7 +20,7 @@
             <td>Redwan</td>
             <td><a href="https://t.me/abd_red080">@abd_red080</a></td>
         </tr>
-       
+
         </tbody>
     </table>
 @endsection
