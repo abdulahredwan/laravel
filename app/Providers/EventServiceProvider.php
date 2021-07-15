@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\NewCustomerHasRegisteredEvent;
+use App\Listeners\WelcomeNewcustomerListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,8 +17,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        NewCustomerHasRegisteredEvent::class=> [
+            \App\Listeners\WelcomeNewcustomerListener::class,
+            \App\Listeners\RegisterCustomerToNewsLetter::class,
+            \App\Listeners\ NotifyAdminViaSlack::class,
+
+
         ],
     ];
 

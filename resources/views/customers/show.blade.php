@@ -33,4 +33,8 @@
         @csrf
         <button class="btn btn-danger" type="submit">DELETE {{$customer->name}}</button>
     </form>
+    @if($customer->image)
+        <div class="row col-12"><img src="{{asset('storage/' .$customer->image)}}" alt="" class="img-fluid"></div>
+
+    @endif
 @endsection

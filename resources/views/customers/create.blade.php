@@ -10,7 +10,7 @@
 
     </div>
     <div class="row">
-        <div class="col-12"><form action="/customer " method="POST" >
+        <div class="col-12"><form action="/customer " method="POST" enctype="multipart/form-data" >
           @include('customers.form')
                 <button type="submit" class="btn btn-primary">Add customer</button>
                 @csrf

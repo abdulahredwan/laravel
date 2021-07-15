@@ -2,7 +2,7 @@
     <label for="name">Name of Customer:</label>
     <input type="text" name="name" value="{{old('name') ?? $customer->name}}" class="form-control">
 
-    <span style="color: darkred "> <strong>{{$errors->first('name')}}<br></span> </strong>
+    <span style="color: red "> <strong>{{$errors->first('name')}}<br></span> </strong>
 
     @csrf
 
@@ -44,5 +44,11 @@
 
 
     </select>
+
+</div>
+<div class="form-group d-flex flex-column">
+    <label for="image">Profile Image</label>
+    <input type="file" name="image" class="py-2">
+    <span style="color: red "> <strong>{{$errors->first('image')}}<br></span> </strong>
 </div>
 @csrf

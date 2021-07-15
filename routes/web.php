@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::view ('/', 'home');
 
 
-Route::view ('about', 'az');
-Route::get('contact', '\App\Http\Controllers\ContactFormController@create');
-Route::post('contact', '\App\Http\Controllers\ContactFormController@store');
+Route::view ('about', 'az')->middleware('test');
+Route::get('contact', '\App\Http\Controllers\ContactFormController@create')->name('contact.create');
+Route::post('contact', '\App\Http\Controllers\ContactFormController@store')->name('contact.store');
 Route::view ('az' , 'az');
 
 //Route::get('customer','\App\Http\Controllers\CustomersController@index'  );
@@ -26,10 +26,11 @@ Route::view ('az' , 'az');
 //Route::post('customer', '\App\Http\Controllers\CustomersController@store');
 //Route::get('customer/{customer}', '\App\Http\Controllers\CustomersController@show');
 //Route::get('customer/{customer}/edit', '\App\Http\Controllers\CustomersController@edit');
-//Route::patch('customer/{customer}', '\App\Http\Controllers\CustomersController@update');
+//Route::patch('customer/{
+//customer}', '\App\Http\Controllers\CustomersController@update');
 //Route::delete('customer/{customer}', '\App\Http\Controllers\CustomersController@destroy');
 
-Route::resource('customer', '\App\Http\Controllers\CustomersController')->middleware('auth');
+Route::resource('customer', '\App\Http\Controllers\CustomersController');
 
 Auth::routes();
 
@@ -54,3 +55,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
